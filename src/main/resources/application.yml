@@ -1,0 +1,30 @@
+#spring:
+#  datasource:
+#    url: jdbc:h2:mem:pete
+#    username: sa
+#    password: password
+#    driverClassName: org.h2.Driver
+#  jpa:
+#    spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
+#  h2:
+#    console.enabled: true
+
+
+spring:
+  profiles:
+    active: dev
+
+
+---
+
+spring:
+  datasource:
+    profiles: dev
+    url: jdbc:mysql://localhost:3306/pete
+    username: root
+    password: kambok123
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
